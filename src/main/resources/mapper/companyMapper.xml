@@ -11,9 +11,28 @@
         <result column="expire_date" property="expireDate" jdbcType="DATE"/>
     </resultMap>
 
+    <!-- 根据id获取数据 -->
     <select id="getCompanyById" resultMap="companyMap">
-      SELECT id,name,address,phone,reg_time,expire_date
-      FROM company
-      WHERE id = #{cid}
+        SELECT
+            id,
+            name,
+            address,
+            phone,
+            reg_time,
+            expire_date
+        FROM company
+        WHERE id = #{cid}
+    </select>
+
+    <!-- 获取所有公司数据 -->
+    <select id="listAllCompanny" resultMap="companyMap">
+        SELECT
+            id,
+            name,
+            address,
+            phone,
+            reg_time,
+            expire_date
+        FROM company
     </select>
 </mapper>

@@ -4,6 +4,8 @@ import com.leyuta.entity.Company;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 /**
  * Created by  listen on 2017/7/13 0013.
  * 操作company数据表的dao类
@@ -19,4 +21,11 @@ public interface CompanyDao
      * @return Company
      */
     Company getCompanyById(@Param("cid") Long cid);
+
+    /**
+     * 获取所有公司列表
+     *
+     * @return
+     */
+    List<Company> listAllCompanny();
 }

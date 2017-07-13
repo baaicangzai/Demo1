@@ -5,6 +5,8 @@ import com.leyuta.entity.Company;
 import com.leyuta.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 /**
  * Created by  listen on 2017/7/13 0013.
  * 公司业务实现类
@@ -22,5 +24,10 @@ public class CompanyServiceImpl implements CompanyService
     {
 
         return companyDao.getCompanyById(cid);
+    }
+    @Override
+    public List<Company> queryAllCompany()
+    {
+        return companyDao.listAllCompanny();
     }
 }
