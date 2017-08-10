@@ -1,5 +1,8 @@
 package com.leyuta.entity;
 
+import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.NotNull;
 import java.sql.Date;
 import java.sql.Timestamp;
 /**
@@ -8,6 +11,7 @@ import java.sql.Timestamp;
  */
 public class Company
 {
+
     /**
      * 主键id
      */
@@ -16,6 +20,8 @@ public class Company
     /**
      * 公司名称
      */
+    @NotNull(message = "名称不能为空") // 注解验证不能为空
+    @Length(min = 3, max = 20, message = "公司名称3-20个字符哦") // 注解验证字符串长度
     private String name;
 
     /**
@@ -105,6 +111,7 @@ public class Company
     @Override
     public String toString()
     {
-        return "Company{" + "id=" + id + ", name='" + name + '\'' + ", address='" + address + '\'' + ", phone='" + phone + '\'' + ", regTime=" + regTime + ", expireDate=" + expireDate + '}';
+        return "Company{" + "id=" + id + ", name='" + name + '\'' + ", address='" + address + '\'' + ", phone='" +
+            phone + '\'' + ", regTime=" + regTime + ", expireDate=" + expireDate + '}';
     }
 }
