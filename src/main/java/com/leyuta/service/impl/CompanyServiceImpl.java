@@ -28,6 +28,6 @@ public class CompanyServiceImpl implements CompanyService
     @Override
     public List<Company> queryAllCompany()
     {
-        return companyDao.listAllCompanny();
+        return companyDao.listAllCompany();
     }
 }

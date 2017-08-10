@@ -2,6 +2,8 @@ package com.leyuta.controller;
 
 import com.leyuta.entity.Company;
 import com.leyuta.service.CompanyService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +22,8 @@ import java.util.List;
 public class CompanyController
 {
 
+    private static final Logger log = LoggerFactory.getLogger(CompanyController.class);
+
     // 注入 CompanyService
     @Autowired
     private CompanyService companyService;
@@ -28,6 +32,7 @@ public class CompanyController
     @GetMapping("/query/{cid}")
     public Company index(@PathVariable("cid") Long cid)
     {
+        log.info("进入index");
         Company company = companyService.queryCompanyById(cid);
         return company;
     }

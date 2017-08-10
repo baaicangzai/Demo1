@@ -15,7 +15,7 @@
     <select id="getCompanyById" resultMap="companyMap">
         SELECT
             id,
-            name,
+            `name`,
             address,
             phone,
             reg_time,
@@ -25,10 +25,10 @@
     </select>
 
     <!-- 获取所有公司数据 -->
-    <select id="listAllCompanny" resultMap="companyMap">
+    <select id="listAllCompany" resultMap="companyMap">
         SELECT
             id,
-            name,
+            `name`,
             address,
             phone,
             reg_time,

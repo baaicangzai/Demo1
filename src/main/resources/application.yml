@@ -11,6 +11,10 @@ spring:
     username: root
     password: sunny.123
     driver-class-name: com.mysql.jdbc.Driver
+  #开发工具选项
+  devtools:
+    restart:
+      exclude: static/**,public/**,templates/**
 
 # mybatis设置
 mybatis:

@@ -27,5 +27,5 @@ public interface CompanyDao
      *
      * @return
      */
-    List<Company> listAllCompanny();
+    List<Company> listAllCompany();
 }
